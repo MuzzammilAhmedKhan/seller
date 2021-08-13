@@ -1,0 +1,56 @@
+<!--<style>
+    div {
+      background-image: url('assets/images/BG3.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+        background-size: 100% 100%;
+    }
+    </style>-->
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            <h3>Book Management</h3>
+            <table>
+                <tr align="right">
+                    <td><a routerLink="/bookform/0" routerLinkActive="active-link">Add New Book</a></td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>Filter By</td>
+                    <td>
+                        <select #category (change)="categoryChange(category.value)">
+                            <option value="0">All Categories</option>
+                            <option *ngFor="let category of categories" value="{{category.categoryId}}">{{category.categoryName}}</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <table class="table align-middle table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Book Name</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Price</th>
+                        
+                        <th scope="col">In stock</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let tempbook of books">
+                        <td>{{tempbook.bookName}}</td>
+                        <td class = "center"><img src="{{tempbook.bookImage}}" class="img-thumbnail " /> </td>
+                        <td>{{tempbook.bookDescription}}</td>
+                        <td>{{tempbook.unitPrice}}</td>
+                        
+                        <td>{{tempbook.availableStock}}</td>
+                        <td>
+                            <button class="btn btn-primary" (click)="onEdit(tempbook.bookId)">Edit</button>&nbsp;
+                            <button class="btn btn-danger" (click)="onDelete(tempbook.bookId)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            <form #productForm="ngForm" (ngSubmit)="onSubmit()">
+                <table align="center">
+                    <tr>
+                        <td>
+                            <label for="categoryId">Category:</label>
+                        </td>
+                        <td>
+                            <select name="categoryId" [(ngModel)]="bookModel.categoryId">
+                                <option *ngFor="let category of categories" value="{{category.categoryId}}">{{category.categoryName}}</option>
+                                
+                                </select>
+                                
+                        </td>
+                    </tr>
+                    
+                   <tr>
+                        <td>
+                            <label for="bookName">Book Name</label>
+                        </td>
+                        <td>
+                            <input type="text"  name="bookName" [(ngModel)]="bookModel.bookName"/>
+                        </td>
+                   </tr>
+      
+                <tr>
+                    <td>
+                    <label for="bookDescription">Description</label></td>
+                    <td>
+                    <input type="textarea" name="bookDescription" [(ngModel)]="bookModel.bookDescription"/></td>
+                    
+                </tr>
+               <tr>
+                       <td>
+                    <label for="unitPrice">Unit Price</label></td>
+                    <td>
+                    <input type="text" name="unitPrice" [(ngModel)]="bookModel.unitPrice" /> </td>
+                   
+                </tr>
+                <tr>
+                    <td>
+                    <label for="bookImage">Image:</label></td>
+                    <td>
+                    <input type="text" name="bookImage" [(ngModel)]="bookModel.bookImage"/></td>
+                    
+                </tr>
+                <tr>
+                    <td>
+                    <label for="availableStock">Units in Stock:</label></td>
+                    <td>
+                    <input type="text" name="availableStock" [(ngModel)]="bookModel.availableStock"/></td>
+                    
+                </tr>
+                <tr>
+                    <td>
+                    <label for="active">Active:</label></td>
+                    <td>
+                    <input type="checkbox" name="active" [(ngModel)]="bookModel.active"/></td>
+                    
+               </tr>
+                <tr>
+                    <td> </td>
+                    <td>
+                    <button type="submit" class="btn btn-primary" >
+                        
+                        Save
+                    </button>&nbsp;
+                    
+                    <button (click)="back()" >Cancel</button>   
+                    </td>
+                </tr>
+            </table>
+            </form>
+        </div>
+    </div>
+</div>

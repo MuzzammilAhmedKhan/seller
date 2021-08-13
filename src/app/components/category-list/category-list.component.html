@@ -1,0 +1,56 @@
+<!--category-list is the book_category table in MySQL-->
+<!--category-list is the book_category table in MySQL-->
+<!--category-list is the book_category table in MySQL-->
+<!--category-list is the book_category table in MySQL-->
+<!--category-list is the book_category table in MySQL-->
+      <!--<aside class="menu-sidebar d-none d-lg-block">
+        <div class="logo">
+            <a href="#">
+                <img src="assets/images/logos.png" alt="shopme" class="img-responsive">
+            </a>
+        </div>
+        <div class="menu-sidebar-content js-scrollbar1">
+            <nav class="navbar-sidebar">
+                
+                    <ul class=" list-unstyled navbar-list nav-pills nav-stacked "
+                    *ngFor="let tempCategory of categories" >
+                        <li class = "active">
+                            <a href="#">{{tempCategory.categoryName}}</a>
+                        </li>
+                    
+                    </ul>
+                
+            </nav>
+        </div> 
+    </aside>-->
+
+
+    <div class="main-content">
+        <div class="section-content section-content-p30">
+          <div class="container-fluid">
+            <h3>Category Management</h3>
+            <a routerLink="/categoryform/0" routerLinkActive="active-link">Add New Category</a>
+    <table class="table align-middle table-striped table-bordered">
+        
+        <thead>
+            <tr>
+                <th scope="col">Category Id</th>
+                <th scope="col">Category Name</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead> 
+        <tbody>
+            <tr *ngFor="let tempcategory of categories">
+                <td>{{tempcategory.categoryId}}</td>
+                <td>{{tempcategory.categoryName}}</td>
+                <td>
+                    <button class="btn btn-primary" (click)="onEdit(tempcategory.categoryId)">Edit</button>&nbsp;
+                    <button class="btn btn-danger" (click)="onDelete(tempcategory.categoryId)">Delete</button>
+                </td>
+                
+              </tr>
+        </tbody>
+    </table>
+    </div>
+        </div>   
+    </div>       
